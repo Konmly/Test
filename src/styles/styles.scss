@@ -1,0 +1,276 @@
+@import "./variables-mixin-inheritance.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto-Regular", Arial, sans-serif;
+}
+
+.container {
+  width: 1520px;
+  margin: 0 auto;
+
+  @media screen and (max-width: $xxl) {
+    width: 1120px;
+  }
+
+  @media screen and (max-width: $xl) {
+    width: 1020px;
+  }
+
+  @media screen and (max-width: $lg) {
+    width: 760px;
+  }
+
+  @media screen and (max-width: $md) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: $sm) {
+    width: 100%;
+
+    padding: 0px 10px;
+  }
+
+  @media screen and (max-width: $xs) {
+    width: 100%;
+
+    padding: 0px 10px;
+
+    @include displayFlex(
+      $direction: column,
+      $align: center
+    ); //для футера, блоки чтобы стояли как нужно
+  }
+}
+
+h1 {
+  font-size: $font__size-64;
+  font-weight: $font__weight-700;
+  line-height: $line__height-75;
+
+  margin: 0;
+
+  @media screen and (max-width: $xl) {
+    font-size: $font__size-40;
+    line-height: $line__height-64;
+  }
+
+  @media screen and (max-width: $lg) {
+    font-size: $font__size-36;
+    line-height: $line__height-60;
+  }
+
+  @media screen and (max-width: $md) {
+    font-size: $font__size-34;
+    line-height: $line__height-42;
+  }
+
+  @media screen and (max-width: $sm) {
+    font-size: $font__size-26;
+    line-height: $line__height-36;
+  }
+
+  @media screen and (max-width: $xs) {
+    font-size: $font__size-24;
+    line-height: $line__height-28;
+  }
+}
+
+h2 {
+  font-size: $font__size-48;
+  font-weight: $font__weight-700;
+  line-height: $line__height-64;
+
+  margin: 0;
+
+  @media screen and (max-width: $xl) {
+    font-size: $font__size-36;
+    line-height: $line__height-40;
+  }
+
+  @media screen and (max-width: $sm) {
+    font-size: $font__size-30;
+    line-height: $line__height-34;
+  }
+}
+
+h3 {
+  font-size: $font__size-24;
+  font-weight: $font__weight-400;
+  line-height: $line__height-36;
+
+  margin: 0;
+
+  @media screen and (max-width: $xl) {
+    font-size: $font__size-20;
+  }
+
+  @media screen and (max-width: $lg) {
+    font-size: $font__size-18;
+  }
+
+  @media screen and (max-width: $md) {
+    font-size: $font__size-16;
+  }
+
+  @media screen and (max-width: $sm) {
+    font-size: $font__size-14;
+    line-height: $line__height-26;
+  }
+
+  @media screen and (max-width: $xs) {
+    font-size: $font__size-14;
+    line-height: $line__height-20;
+  }
+}
+
+button {
+  background: none;
+  border: none;
+
+  cursor: pointer;
+  transition: 0.5s;
+
+  padding: 0;
+}
+
+.button {
+  @extend %button;
+
+  &:hover {
+    color: $color__cosmos;
+  }
+
+  &:active {
+    color: $color__white;
+  }
+
+  @media screen and (max-width: $sm) {
+    .button:before {
+      width: 20px;
+      height: 20px;
+
+      background-color: beige;
+    }
+  }
+}
+
+.button-outline {
+  @extend %button;
+
+  border-radius: 5px;
+  border: 2px solid $color__gray-99;
+
+  padding: 5px 30px;
+
+  &:hover {
+    color: $color__cosmos;
+  }
+
+  &:active {
+    color: $color__white;
+  }
+
+  &:hover {
+    color: $color__cosmos;
+  }
+
+  &:active {
+    color: $color__white;
+  }
+
+  @media screen and (max-width: $xl) {
+    font-size: $font__size-16;
+  }
+
+  @media screen and (max-width: $lg) {
+    font-size: $font__size-14;
+  }
+}
+
+.button__outlined-md {
+  @extend %button__outlined-md;
+
+  @media screen and (max-width: $xl) {
+    font-size: $font__size-18;
+    line-height: $line__height-22;
+  }
+}
+
+.button-contained {
+  color: $color__white;
+  @extend %button__outlined-md;
+  text-transform: uppercase;
+
+  padding: 20px 59px;
+  margin-top: 68px;
+
+  background-color: $color__japonica;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+
+  &:hover {
+    background-color: $color__mandy;
+  }
+
+  &:active {
+    background-color: $color__maroon;
+  }
+
+  @media screen and (max-width: $xl) {
+    margin-top: 45px;
+    padding: 15px 59px;
+
+    font-size: $font__size-26;
+  }
+
+  @media screen and (max-width: $lg) {
+    margin-top: 40px;
+    padding: 7px 55px;
+  }
+
+  @media screen and (max-width: $md) {
+    margin-top: 30px;
+    padding: 5px 40px;
+  }
+
+  @media screen and (max-width: $sm) {
+    margin-top: 20px;
+    padding: 4px 30px;
+  }
+
+  @media screen and (max-width: $xs) {
+    margin-top: 86px;
+    padding: 16px 60px;
+
+    font-size: $font__size-24;
+    line-height: $line__height-28;
+  }
+}
+
+img {
+  width: 100%;
+}
+
+dl,
+dd,
+dt,
+p,
+article {
+  margin: 0;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}

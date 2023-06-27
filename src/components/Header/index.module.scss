@@ -1,0 +1,45 @@
+@import "/src/index.scss";
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    @include displayFlex($justify: space-between);
+
+    z-index: 1;
+
+    padding-top: 75px;
+}
+
+.logo {
+    width: 115px;
+    height: 114px;
+}
+
+.button {
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+
+    color: #FCFCFC;
+
+    &:hover {
+        color: #FFD9D9;
+    }
+}
+
+.button__outline {
+    border: 2px solid #FCFCFC;
+    border-radius: 5px;
+
+    padding: 5px 15px;
+    margin-left: 25px;
+}
+
+
